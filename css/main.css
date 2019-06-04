@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:400,700&display=swap");
+body {
+  margin: 0;
+  height: calc(100vh - 8em);
+  font-family: 'Muli', sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin: 4em;
+}
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.container .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-animation: carouselAnim 60s infinite alternate linear;
+          animation: carouselAnim 60s infinite alternate linear;
+}
+
+.container .items .entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 300px;
+  background: white;
+  margin: 1em;
+  padding: .5em;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.05);
+          box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.05);
+}
+
+.container .items .entry p {
+  text-align: center;
+  padding: 1em;
+}
+
+.container .items .entry p.name {
+  font-weight: bold;
+}
+
+@-webkit-keyframes carouselAnim {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(calc(-100% + (5*300px)));
+            transform: translate(calc(-100% + (5*300px)));
+  }
+}
+
+@keyframes carouselAnim {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(calc(-100% + (5*300px)));
+            transform: translate(calc(-100% + (5*300px)));
+  }
+}
+
+@media only screen and (max-width: 798px) {
+  .container {
+    -webkit-animation: carouselAnim 3s infinite alternate linear;
+            animation: carouselAnim 3s infinite alternate linear;
+  }
+  @-webkit-keyframes carouselAnim {
+    from {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    to {
+      -webkit-transform: translate(calc(-100% + (2*300px)));
+              transform: translate(calc(-100% + (2*300px)));
+    }
+  }
+  @keyframes carouselAnim {
+    from {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    to {
+      -webkit-transform: translate(calc(-100% + (2*300px)));
+              transform: translate(calc(-100% + (2*300px)));
+    }
+  }
+}
+
+.container .faders {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+}
+
+.container .faders .left, .container .faders .right {
+  background: -webkit-gradient(linear, left top, right top, from(whitesmoke), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, whitesmoke 0%, rgba(255, 255, 255, 0) 100%);
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  z-index: 200;
+}
+
+.container .faders .right {
+  right: 0;
+  background: -webkit-gradient(linear, right top, left top, from(whitesmoke), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to left, whitesmoke 0%, rgba(255, 255, 255, 0) 100%);
+}
+/*# sourceMappingURL=main.css.map */
